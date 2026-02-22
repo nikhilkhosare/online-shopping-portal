@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping Portal</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f1f3f6;
+        }
+
+        header {
+            background-color: #2874f0;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        #searchInput {
+            width: 60%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        #exploreButtons {
+            text-align: center;
+            margin: 20px;
+        }
+
+        #exploreButtons button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #2874f0;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #exploreButtons button:hover {
+            background-color: #0f5bd3;
+        }
+
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #ff9f00;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #fb641b;
+            color: white;
+        }
+
+        #cartSection {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        #cartItems div {
+            margin: 5px 0;
+        }
+
+        #cartItems button {
+            margin-left: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 3px 6px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #checkoutBtn {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #checkoutBtn:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🛒 Online Shopping Portal</h1>
+    <input type="text" id="searchInput" placeholder="Search for products...">
+</header>
+
+<!-- Explore Section -->
+<div id="exploreButtons">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('Laptop')">Laptop</button>
+    <button onclick="filterProducts('Smartphone')">Smartphone</button>
+    <button onclick="filterProducts('Headphones')">Headphones</button>
+    <button onclick="filterProducts('Keyboard')">Keyboard</button>
+</div>
+
+<!-- Products Section -->
+<div id="products"></div>
+
+<!-- Cart Section -->
+<div id="cartSection">
+    <h2>🛍 Cart (<span id="cartCount">0</span>)</h2>
+    <div id="cartItems"></div>
+    <h3>Total: ₹<span id="totalPrice">0</span></h3>
+    <button id="checkoutBtn" onclick="checkout()">Proceed to Payment</button>
+</div>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
